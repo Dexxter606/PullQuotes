@@ -46,6 +46,7 @@ class PacSumExtractor:
         dataframe['reference'] = references
         dataframe['extracted'] = summaries
         result = evaluate_rouge(summaries, references, remove_temp=True, rouge_args=[])
+        print(dataframe.shape)
         return dataframe.to_csv('Final_result.csv')
     def tune_hparams(self, data_iterator, example_num=1000):
 
